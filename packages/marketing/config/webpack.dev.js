@@ -1,5 +1,4 @@
-const {merge} = require('webpack-merge') // merge two different webpack configs.
-const HtmlWebpackPlugin = require('html-webpack-plugin') // take html file from our project and will inject script tags init.
+const { merge } = require('webpack-merge') // merge two different webpack configs.
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const commonConfig = require('./webpack.common')
 const packageJson = require('../package.json')
