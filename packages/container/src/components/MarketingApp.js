@@ -7,13 +7,19 @@ export default () => {
     const history = useHistory(); //copy of browser history
 
     useEffect(() => {
-        const { onParentNavigate } = mount(ref.current, {
+
+        const result = mount(ref.current, {
             onNavigate: ({ pathname: nextPathname }) => {
                 const { pathname } = history.location;
                 if (pathname !== nextPathname)
                     history.push(nextPathname)
             }
         });
+
+        console.log({ result })
+        const { onParentNavigate } = result || {};
+
+        console.log({ onParentNavigate })
 
         history.listen(onParentNavigate)
     }, []);
