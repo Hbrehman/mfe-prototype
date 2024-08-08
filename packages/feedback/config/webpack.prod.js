@@ -1,23 +1,27 @@
 const { merge } = require('webpack-merge') // merge two different webpack configs.
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin")
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const commonConfig = require('./webpack.common')
 const packageJson = require('../package.json')
 
 const domain = process.env.PRODUCTION_DOMAIN
 
+console.log({ domain })
+
 const prodConfig = {
     mode: 'production',
     output: {
         filename: '[name].[contenthash].js', //output file names will use this template
-        publicPath: '/container/latest/'
+        publicPath: '/feedback/latest/'
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'container',
+            name: 'feedback',
+            filename: 'remoteEntry.js',
             remotes: {
-                feedback: `feedback@${domain}/feedback/latest/remoteEntry.js`,
-                auth: `auth@${domain}/auth/latest/remoteEntry.js`,
-                dashboard: `dashboard@${domain}/dashboard/latest/remoteEntry.js`,
+                competencies: `competencies@${domain}/competencies/latest/remoteEntry.js`,
+            },
+            exposes: {
+                './FeedbackApp': './src/bootstrap'
             },
             shared: packageJson.dependencies
         })
