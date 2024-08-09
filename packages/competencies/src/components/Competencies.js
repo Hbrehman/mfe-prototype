@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Album() {
+export default function Competencies() {
   const classes = useStyles();
 
   return (
