@@ -4,7 +4,7 @@ import { StylesProvider, createGenerateClassName } from '@material-ui/core/style
 import Competencies from './components/Competencies'
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'co'
+  productionPrefix: 'com'
 })
 
 export default function App() {

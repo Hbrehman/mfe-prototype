@@ -1,5 +1,7 @@
+# A workflow is a configurable automated process that will run one or more jobs
 name: deploy-feedback
 
+# event that will trigger the workflow.
 on:
   push:
     branches:
@@ -11,11 +13,12 @@ defaults:
   run:
     working-directory: packages/feedback # this will set execution env inside of feedback directory.
 
+# job which will execute on a runner machine and run a series of one or more steps. 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #A runner is a server that runs your workflows when they're triggered
 
-    steps:
+    steps: #in steps we can execute shell scripts or and action. actions are pre-defined scripts that perform a certain task.
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm run build

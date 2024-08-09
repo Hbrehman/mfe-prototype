@@ -9,19 +9,26 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue']
     },
+    /*
+        Out of the box, webpack only understands JavaScript and JSON files. Loaders allow webpack to process 
+        other types of files and convert them into valid modules that can be consumed by your application 
+        and added to the dependency graph.
+    */
     module: {
         rules: [
             {
-                test: /\.(png|jpe?g|gif|woff|svg|eot|ttf)$/i,
-                use: [
+                test: /\.(png|jpe?g|gif|woff|svg|eot|ttf)$/i, 
+                use: [ 
                     {
-                        loader: 'file-loader'
+                        loader: 'file-loader' 
                     }
                 ]
             },
             {
-                test: /\.vue$/,
-                use: 'vue-loader'
+                test: /\.vue$/, //identifies which file or files should be transformed.
+                use: 'vue-loader' // indicates which loader should be used to do the transforming.
+                /*"Hey webpack compiler, when you come across a path that resolves to a '.vue' file inside of 
+                a require()/import statement, use the vue-loader to transform it before you add it to the bundle."*/
             },
             {
                 test: /\.scss|\.css$/,

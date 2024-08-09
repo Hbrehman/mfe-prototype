@@ -3,10 +3,6 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const commonConfig = require('./webpack.common')
 const packageJson = require('../package.json')
 
-const domain = process.env.PRODUCTION_DOMAIN
-
-console.log({ domain })
-
 const prodConfig = {
     mode: 'production',
     output: {
@@ -18,7 +14,7 @@ const prodConfig = {
             name: 'feedback',
             filename: 'remoteEntry.js',
             remotes: {
-                competencies: `competencies@${domain}/competencies/latest/remoteEntry.js`,
+                competencies: `competencies@/competencies/latest/remoteEntry.js`,
             },
             exposes: {
                 './FeedbackApp': './src/bootstrap'
