@@ -1,5 +1,5 @@
 # A workflow is a configurable automated process that will run one or more jobs
-name: deploy-feedback
+name: deploy-feedback # workflow name
 
 # event that will trigger the workflow.
 on:
@@ -14,13 +14,17 @@ defaults:
     working-directory: packages/feedback # this will set execution env inside of feedback directory.
 
 # job which will execute on a runner machine and run a series of one or more steps. 
-jobs:
-  build:
+jobs: # groups together all jobs which run under deploy-feedback workflow.
+  build: # job name
     runs-on: ubuntu-latest #A runner is a server that runs your workflows when they're triggered
-
-    steps: #in steps we can execute shell scripts or and action. actions are pre-defined scripts that perform a certain task.
+    # Groups together all the steps that run in the build job. 
+    # Each item nested under this section is a separate action or shell script.
+    # In steps we can execute shell scripts or and action. actions are pre-defined scripts that perform a certain task.
+    steps: 
+      # The uses keyword specifies that this step will run version 2 of the actions/checkout action. latest verion is v4
+      # You should use the checkout action any time your workflow will use the repository's code.
       - uses: actions/checkout@v2
-      - run: npm install
+      - run: npm install # The run keyword tells the job to execute a command on the runner. e.g install npm modules
       - run: npm run build
 
       - uses: shinyinc/action-aws-cli@v1.2
