@@ -2,6 +2,9 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -68,6 +71,17 @@ export default function Album() {
               contents, the creator, etc. Make it short and sweet, but not too
               short so folks do not simply skip over it entirely.
             </Typography>
+            <div className={classes.heroButtons}>
+              <Grid container spacing={2} justifyContent="center">
+                <Grid item>
+                  <Link to="/request-feedback">
+                    <Button variant="contained" color="primary">
+                      Request Feedback
+                    </Button>
+                  </Link>
+                </Grid>
+              </Grid>
+            </div>
           </Container>
         </div>
       </main>

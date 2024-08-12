@@ -59,6 +59,17 @@ export default function Header({ isSignedIn, onSignOut }) {
           >
             App
           </Typography>
+          <div>
+            <Button
+              color="primary"
+              variant="contained"
+              className={classes.link}
+              component={RouterLink}
+              to='/'
+              onClick={() => { localStorage.clear() }}
+            >
+              Reset
+            </Button>
           <Button
             color="primary"
             variant="outlined"
@@ -69,6 +80,7 @@ export default function Header({ isSignedIn, onSignOut }) {
           >
             {isSignedIn ? 'Logout' : 'Login'}
           </Button>
+          </div>
         </Toolbar>
       </AppBar>
     </React.Fragment>

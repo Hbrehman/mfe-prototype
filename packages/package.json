@@ -1,0 +1,10 @@
+{
+  "name": "oot",
+  "version": "1.0.0",
+  "scripts": {
+    "start-all": "concurrently \"npm start --prefix app-catalog\" \"npm start --prefix auth\" \"npm start --prefix competencies\" \"npm start --prefix container\"  \"npm start --prefix dashboard\"  \"npm start --prefix feedback\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

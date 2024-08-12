@@ -2,6 +2,9 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 import CompetenciesApp from './CompetenciesApp';
 
@@ -76,6 +79,17 @@ export default function Pricing() {
           with this layout. It&apos;s built with default Material-UI components
           with little customization.
         </Typography>
+        <div className={classes.heroButtons}>
+          <Grid container spacing={2} justifyContent="center">
+            <Grid item>
+              <Link to="/">
+                <Button variant="contained" color="primary">
+                  Give Feedback
+                </Button>
+              </Link>
+            </Grid>
+          </Grid>
+        </div>
       </Container>
       <CompetenciesApp />
     </React.Fragment>

@@ -1,0 +1,26 @@
+{
+  "microFrontends": [
+    {
+      "scope": "dashboard",
+      "description": "Dashboard",
+      "module": "./DashboardApp",
+      "url": "http://localhost:8083",
+      "dashboard": "/dashboard",
+      "path": "/dashboard"
+    },
+    {
+      "scope": "competencies",
+      "description": "Competencies",
+      "module": "./CompetenciesApp",
+      "url": "http://localhost:8084",
+      "path": "/competencies"
+    },
+    {
+      "scope": "feedback",
+      "description": "Feedback",
+      "module": "./FeedbackApp",
+      "url": "http://localhost:8081",
+      "path": "/"
+    }
+  ]
+}
