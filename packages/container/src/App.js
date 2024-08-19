@@ -45,6 +45,10 @@ function getComponent(mount) {
     }
 }
 
+function Welcome() {
+    return <h1>WELCOME!!!</h1>
+}
+
 export default function App() {
     const [isSignedIn, setIsSignedIn] = useState(false);
     const [installedApps, setInstalledApps] = useState({});
@@ -67,7 +71,6 @@ export default function App() {
                     iApps = { ...iApps, [app.scope]: getComponent(mount) }
                 }
             }
-            console.log({ iApps })
             setInstalledApps({ ...iApps });
         }
 
@@ -84,6 +87,7 @@ export default function App() {
                             {Object.keys(installedApps).map(app => {
                                 return <Route keys={app} path={appsToInstall.filter(a => a.scope === app)[0].path} component={installedApps[app]} />
                             })}
+                            <Route path="/" component={Welcome} />
                         </Switch>
                     </Suspense>
                 </MainLayout>

@@ -74,7 +74,7 @@ export default function Album() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
-                  <Link to="/request-feedback">
+                  <Link to="/feedback/request-feedback">
                     <Button variant="contained" color="primary">
                       Request Feedback
                     </Button>

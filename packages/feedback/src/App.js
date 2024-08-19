@@ -14,8 +14,8 @@ export default function App({ history }) {
     <StylesProvider generateClassName={generateClassName}>
       <Router history={history}>
         <Switch>
-            <Route exact path='/' component={GiveFeedback}/>
-            <Route exact path='/request-feedback' component={RequestFeedback} />
+          <Route exact path='/feedback' component={GiveFeedback} />
+          <Route exact path='/feedback/request-feedback' component={RequestFeedback} />
         </Switch>
       </Router>
     </StylesProvider>

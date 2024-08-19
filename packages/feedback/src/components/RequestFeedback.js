@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 import CompetenciesApp from './CompetenciesApp';
+const appsToInstall = JSON.parse(localStorage.getItem('mfes'))
+const allowCompetences = appsToInstall.find(app => app.scope === 'competencies');
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -82,7 +84,7 @@ export default function Pricing() {
         <div className={classes.heroButtons}>
           <Grid container spacing={2} justifyContent="center">
             <Grid item>
-              <Link to="/">
+              <Link to="/feedback">
                 <Button variant="contained" color="primary">
                   Give Feedback
                 </Button>
@@ -91,7 +93,7 @@ export default function Pricing() {
           </Grid>
         </div>
       </Container>
-      <CompetenciesApp />
+      {allowCompetences && <CompetenciesApp />}
     </React.Fragment>
   );
 }

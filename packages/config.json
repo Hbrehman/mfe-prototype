@@ -5,7 +5,6 @@
       "description": "Dashboard",
       "module": "./DashboardApp",
       "url": "http://localhost:8083",
-      "dashboard": "/dashboard",
       "path": "/dashboard"
     },
     {
@@ -20,7 +19,7 @@
       "description": "Feedback",
       "module": "./FeedbackApp",
       "url": "http://localhost:8081",
-      "path": "/"
+      "path": "/feedback"
     }
   ]
 }
