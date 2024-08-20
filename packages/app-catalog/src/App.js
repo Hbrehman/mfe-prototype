@@ -34,7 +34,7 @@ export default function App() {
           <ContainerLazy />
         ) : (
           <div>
-              <h1>Below are the available modules you can include in your application</h1>
+              <h1>Below are the available modules you can include in your application!!</h1>
             <ul>
                 {microFrontends.map(mf => (
                   <li key={mf.description}>
