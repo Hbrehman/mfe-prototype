@@ -1,24 +1,24 @@
 {
-  "microFrontends": [
+  "apps": [
     {
       "scope": "dashboard",
       "description": "Dashboard",
       "module": "./DashboardApp",
-      "url": "/dashboard/latest/",
+      "url": "/dashboard/latest",
       "path": "/dashboard"
     },
     {
       "scope": "competencies",
       "description": "Competencies",
       "module": "./CompetenciesApp",
-      "url": "/competencies/latest/",
+      "url": "/competencies/latest",
       "path": "/competencies"
     },
     {
       "scope": "feedback",
       "description": "Feedback",
       "module": "./FeedbackApp",
-      "url": "/feedback/latest/",
+      "url": "/feedback/latest",
       "path": "/feedback"
     }
   ]

@@ -1,7 +1,7 @@
 import React, { useState, lazy, Suspense } from 'react';
 import { StylesProvider, createGenerateClassName } from '@material-ui/core/styles';
 
-import { microFrontends } from '../../config.json';
+import config from '../config.json';
 
 const ContainerLazy = lazy(() => import('./components/ContainerApp'));
 
@@ -36,7 +36,7 @@ export default function App() {
           <div>
               <h1>Below are the available modules you can include in your application!!</h1>
             <ul>
-                {microFrontends.map(mf => (
+                {config.apps.map(mf => (
                   <li key={mf.description}>
                     <label>
                       <input
